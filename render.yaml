@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nexus-flood
+    runtime: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: NODE_ENV
+        value: production
