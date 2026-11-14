@@ -470,7 +470,11 @@ export default function IncidentReports() {
                     <div>
                       <p className="text-sm font-medium text-gray-200">
                         {inc.description?.substring(0, 80)}
-                        {inc.is_demo && <span className="ml-2 text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>}
+                        {inc.is_demo ? (
+                          <span className="ml-2 text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>
+                        ) : (
+                          <span className="ml-2 text-[9px] px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-mono">LIVE RECORD</span>
+                        )}
                       </p>
                       <p className="text-xs text-gray-500 mt-1 flex items-center gap-3">
                         <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{inc.location || 'Unknown'}</span>

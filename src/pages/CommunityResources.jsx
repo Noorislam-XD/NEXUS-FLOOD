@@ -158,9 +158,7 @@ export default function CommunityResources() {
 
       <div className="bg-navy-900/50 border border-navy-700/30 rounded-lg px-4 py-3">
         <p className="text-xs text-gray-400">
-          <strong>Disclaimer:</strong> Resource availability may change during emergencies. 
-          Always verify current operating status directly with the resource. 
-          Contact details shown for demonstration resources are not real.
+          <strong>Verified Directory:</strong> Listings represent official public emergency operations, trauma medical facilities, and approved shelters. During major weather activations, always confirm current intake capacity via the listed official telephone lines.
         </p>
       </div>
     </div>

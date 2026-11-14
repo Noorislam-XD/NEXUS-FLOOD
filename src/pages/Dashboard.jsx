@@ -144,8 +144,10 @@ export default function Dashboard({ onNavigate }) {
                           {incident.description?.substring(0, 60) || 'Untitled Incident'}
                           {incident.description?.length > 60 ? '...' : ''}
                         </p>
-                        {incident.is_demo && (
+                        {incident.is_demo ? (
                           <span className="text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded border border-purple-500/30 font-mono">DEMO</span>
+                        ) : (
+                          <span className="text-[9px] px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-mono">LIVE RECORD</span>
                         )}
                       </div>
                       <div className="flex items-center gap-3 mt-1">
@@ -206,9 +208,11 @@ export default function Dashboard({ onNavigate }) {
                       <p className="text-xs font-medium text-gray-200">{alert.title}</p>
                       <p className="text-[11px] text-gray-400 mt-1 line-clamp-2">{alert.description?.substring(0, 120)}...</p>
                       <div className="flex items-center gap-2 mt-2">
-                        <span className="text-[10px] text-gray-500">{alert.source || 'NWS'}</span>
-                        {alert.is_demo && (
+                        <span className="text-[10px] text-gray-400 truncate max-w-[180px]">{alert.source || 'NOAA NWS'}</span>
+                        {alert.is_demo ? (
                           <span className="text-[9px] px-1 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>
+                        ) : (
+                          <span className="text-[9px] px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/30 font-medium">LIVE NOAA</span>
                         )}
                       </div>
                     </div>

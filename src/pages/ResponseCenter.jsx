@@ -141,8 +141,10 @@ function ActionGroup({ title, icon: Icon, actions, updating, onUpdateStatus, get
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <p className="text-sm font-medium text-gray-200">{action.title}</p>
-                    {action.is_demo && (
+                    {action.is_demo ? (
                       <span className="text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>
+                    ) : (
+                      <span className="text-[9px] px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-mono">ACTION PROTOCOL</span>
                     )}
                   </div>
                   <p className="text-xs text-gray-400 mt-1">{action.description}</p>

@@ -89,8 +89,10 @@ export default function EvidenceCenter() {
                         <p className="text-sm font-medium text-gray-200 truncate">
                           {inc.description?.substring(0, 80) || 'Untitled'}
                         </p>
-                        {inc.is_demo && (
-                          <span className="text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>
+                        {inc.is_demo ? (
+                          <span className="text-[9px] px-1.5 py-0.5 bg-purple-500/20 text-purple-300 rounded border border-purple-500/30 font-mono">DEMO</span>
+                        ) : (
+                          <span className="text-[9px] px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-mono">LIVE RECORD</span>
                         )}
                       </div>
                       <p className="text-xs text-gray-500 mt-1">

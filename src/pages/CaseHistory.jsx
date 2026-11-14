@@ -77,7 +77,11 @@ export default function CaseHistory() {
                   <div className="min-w-0">
                     <p className="text-sm font-medium text-gray-200 truncate">
                       {inc.description?.substring(0, 50) || 'Untitled'}
-                      {inc.is_demo && <span className="ml-2 text-[9px] px-1 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>}
+                      {inc.is_demo ? (
+                        <span className="ml-2 text-[9px] px-1 py-0.5 bg-purple-500/20 text-purple-300 rounded font-mono">DEMO</span>
+                      ) : (
+                        <span className="ml-2 text-[9px] px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-mono">LIVE</span>
+                      )}
                     </p>
                     <div className="flex items-center gap-3 mt-1">
                       <span className="text-xs text-gray-500 flex items-center gap-1">

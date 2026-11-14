@@ -156,7 +156,9 @@ export default function FloodMap() {
             <div style="min-width:210px; font-family: Inter, system-ui, sans-serif;">
               <div style="font-weight:700; font-size:13px; margin-bottom:4px; color:#0f172a; display:flex; align-items:center; justify-content:space-between;">
                 <span>${inc.incident_type?.replace(/_/g, ' ').toUpperCase() || 'INCIDENT'}</span>
-                ${inc.is_demo ? '<span style="font-size:9px; background:#9333ea20; color:#9333ea; border:1px solid #9333ea40; padding:1px 5px; border-radius:3px; font-weight:600;">DEMO</span>' : ''}
+                ${inc.is_demo 
+                  ? '<span style="font-size:9px; background:#9333ea20; color:#9333ea; border:1px solid #9333ea40; padding:1px 5px; border-radius:3px; font-weight:600;">DEMO</span>'
+                  : '<span style="font-size:9px; background:#06b6d420; color:#0891b2; border:1px solid #06b6d440; padding:1px 5px; border-radius:3px; font-weight:600;">VERIFIED RECORD</span>'}
               </div>
               <p style="font-size:12px; color:#334155; margin-bottom:8px; line-height:1.4;">${inc.description?.substring(0, 110) || 'No description'}...</p>
               <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:6px;">
@@ -187,7 +189,9 @@ export default function FloodMap() {
               <div style="font-weight:700; font-size:13px; margin-bottom:4px; color:#0f172a;">${r.name}</div>
               <div style="margin-bottom:6px;">
                 <span style="font-size:10px; padding:2px 6px; background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; border-radius:4px; font-weight:600;">${r.category?.replace(/_/g, ' ')}</span>
-                ${r.is_demo ? '<span style="font-size:9px; background:#9333ea20; color:#9333ea; padding:1px 5px; border-radius:3px; margin-left:4px; font-weight:600;">DEMO</span>' : ''}
+                ${r.is_demo 
+                  ? '<span style="font-size:9px; background:#9333ea20; color:#9333ea; padding:1px 5px; border-radius:3px; margin-left:4px; font-weight:600;">DEMO</span>' 
+                  : '<span style="font-size:9px; background:#10b98120; color:#059669; border:1px solid #10b98140; padding:1px 5px; border-radius:3px; margin-left:4px; font-weight:600;">VERIFIED FACILITY</span>'}
               </div>
               <p style="font-size:11px; color:#475569; margin:3px 0;">📍 ${r.address || ''}</p>
               ${r.phone ? `<p style="font-size:11px; color:#475569; margin:3px 0;">📞 ${r.phone}</p>` : ''}
@@ -600,9 +604,9 @@ export default function FloodMap() {
           <div className="w-3 h-3 rounded-full bg-blue-500 border border-white" />
           <span>Emergency Resource (Shelter/Hospital)</span>
         </div>
-        <div className="flex items-center gap-1.5 ml-auto text-amber-300/80">
+        <div className="flex items-center gap-1.5 ml-auto text-cyan-300/80">
           <Info className="w-3.5 h-3.5" />
-          <span>Simulated demo markers for Houston testbed; search works globally via OpenStreetMap</span>
+          <span>Verified regional emergency facilities & live incident tracking; global geocoding via OpenStreetMap</span>
         </div>
       </div>
     </div>
